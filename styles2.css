@@ -1,0 +1,53 @@
+#vitrine {
+    height: 30vh;
+}
+
+#vitrine .carousel-inner,
+#vitrine .corousel-item {
+    height: 100%;
+    background-color: gray;
+    padding: 0 140;
+}
+
+    body {
+    font-family: 'Roboto', sans-serif;
+    }
+    
+    .row {
+    margin: 0;
+    }
+    
+    .container {
+    padding: 70px 0;
+    }
+    
+    
+    P, li {
+    color: #444;
+    font-size: 14px;
+    }
+    
+    header, .navbar {
+    background-color: #353041;
+    margin: auto;
+    }
+
+    #nav-container {
+    padding-top: 0;
+    padding-bottom: 0;}
+
+    #logo {
+        width: 75px;
+    }
+
+    .navbar-brand:hover {
+        color: #fff;
+    }
+
+    #navbar-links a {
+        color: #fff;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding: 1rem .8rem;
+    }

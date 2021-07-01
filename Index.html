@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Track Project</title>
+
+    <!-- CSS Bootstrap only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- CSS Bootstrap Icons -->          
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!-- Java Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+            crossorigin="anonymous"></script>
+
+    <!-- My CSS Stales Activate -->
+    <link rel="stylesheet" href="styles2.css">
+
+    <!-- Nice Font -->
+    <script src="https://kit.fontawesome.com/bf7e05c402.js" crossorigin="anonymous"></script> 
+
+    
+
+</head>
+<body class="page">
+
+<header>
+
+    <header>
+        <div class="container" id="nav-container">
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <a class="navbar-brand">
+                    <img id="logo" src="./HTML/Imagens/logo.png" alt="Logo Health Track"> Health Track
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navba
+                aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
+                    <div class="navbar-nav">
+                    <a class="nav-item nav-link" id="pesos-menu" href="./1.Pesos.html">Pesos</a>
+                    <a class="nav-item nav-link" id="calorias-menu" href="./2.Calorias.html">Calorias</a>
+                    <a class="nav-item nav-link" id="alimentos-menu" href="./3.Alimentos.html">Alimentos</a>
+                    <a class="nav-item nav-link" id="treinos-menu" href="./4.Treinos.html">Treino e Atividades</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+</header>
+
+<main class="coutainer">        
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-11"></div>
+        </div>
+</main>    
+
+    <div id="vitrine" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#vitrine" class="active" data-bs-slide-to="0"></button>
+            
+            <button type="button" data-bs-target="#vitrine" data-bs-slide-to="1"></button>
+
+            <button type="button" data-bs-target="#vitrine" data-bs-slide-to="2"></button>
+
+            <button type="button" data-bs-target="#vitrine" data-bs-slide-to="3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active"> <img class="imagens" src="./HTML/Imagens/img.jpg" height= 410 width= 100%> </div>
+
+            <div class="carousel-item"> <img class="imagens" src="./HTML/Imagens/img1.jpg" height= 410 width= 100%> </div>
+
+            <div class="carousel-item"> <img class="imagens" src="./HTML/Imagens/img2.jpg" height= 410 width= 100%> </div>
+
+            <div class="carousel-item"> <img class="imagens" src="./HTML/Imagens/img3.jpg" height= 410 width= 100%> </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#vitrine" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#vitrine" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+    </div>
+
+    <section id="submenu" class="accordion">
+        
+         <!-- MENU PESO-->
+        
+        <div class="accordion-item">
+            <h2 id="sub1" class="accordion-header"> 
+                <button type="button" class="accordion-button" data-bs-toggle="collapse"
+                data-bs-target="#subtext1">
+                PESO ATUAL
+                </button>
+            </h2>
+
+            <div id="subtext1" class="accordion-collapse collapse show"
+            data-bs-parent="#submenu">
+                <div class="accordion-body">
+                    O peso corporal é composto por massa muscular, massa gordurosa, água, 
+                    proteínas, minerais e lipídios. Para obter um estado desejável de saúde é 
+                    necessário manter o peso corporal dentro dos limites, 
+                    respeitando as características pessoais.
+                    
+                    <br> <strong> Para mais informações clique no link abaixo: </strong> </br>
+
+                    <strong> <a href="./HTML/Links Auxiliares/Peso-Link1.htm" id="link1"> Vamos conhecer mais sobre o seu peso? </a> </strong>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- MENU CALORIAS-->
+
+        <div class="accordion-item">
+            <h2 id="sub2" class="accordion-header"> 
+                <button type="button" class="accordion-button" data-bs-toggle="collapse"
+                data-bs-target="#subtext2">
+                CALORIAS GASTAS
+                </button>
+            </h2>
+
+            <div id="subtext2" class="accordion-collapse collapse show"
+            data-bs-parent="#submenu">
+                <div class="accordion-body">                    
+                    São consideradas grandes vilãs, principalmente para o sexo feminino, 
+                    as calorias auxiliam os batimentos cardíacos, ajudam a manter a temperatura 
+                    corpórea, favorecem os olhos e ainda trazem vários benefícios. 
+                    Por serem inseridas no organismo através dos alimentos é importante 
+                    verificar o potencial energético que cada alimento possui, 
+                    ou seja, a quantidade de calorias.
+                    
+                    <br> <strong> Vamos entender melhor abaixo: </strong> </br>
+
+                    <strong> <a href="./HTML/Links Auxiliares/Calorias-Link2.htm" id="link2"> Afinal o que são calorias? </a> </strong>
+                    
+                </div>
+            </div>
+        </div>        
+
+        <!-- MENU ALIMENTOS-->
+
+        <div class="accordion-item">
+            <h2 id="sub3" class="accordion-header"> 
+                <button type="button" class="accordion-button" data-bs-toggle="collapse"
+                data-bs-target="#subtext3">
+                ALIMENTOS CONSUMIDOS
+                </button>
+            </h2>
+
+            <div id="subtext3" class="accordion-collapse collapse show"
+            data-bs-parent="#submenu">
+                <div class="accordion-body">
+                    
+                    Uma alimentação saudável requer quantidades certas, sem exageros e também sem exclusões e 
+                    alimentos que forneçam ao corpo: proteínas, carboidratos, gorduras, fibras, cálcio vitaminas e 
+                    outros minerais. A diversidade de grãos, verduras, legumes e frutas deve fazer parte 
+                    das refeições do dia a dia.
+                
+                <br> <strong> Link abaixo: </strong> </br>
+                    
+                <strong> <a href="./HTML/Links Auxiliares/Alimentos-Link3.htm" id="link3"> Saiba a importância dos alimentos na sua vida! </a> </strong>
+
+                </div>
+            </div>
+        </div>        
+
+        <!-- MENU EXERCICIOS/ATIVIDADES-->
+
+        <div class="accordion-item">
+            <h2 id="sub4" class="accordion-header"> 
+                <button type="button" class="accordion-button" data-bs-toggle="collapse"
+                data-bs-target="#subtext4">
+                EXERCÍCIOS & ATIVIDADES
+                </button>
+            </h2>
+
+            <div id="subtext4" class="accordion-collapse collapse show"
+            data-bs-parent="#submenu">
+                <div class="accordion-body">
+                    Atividade física é, sem dúvida, essencial para aumentarmos nossa qualidade de vida. 
+                    Inúmeros estudos demonstram como a prática frequente de atividade física evita doenças e melhora, 
+                    até mesmo, nossa disposição para a realização de nossas atividades diárias.                    
+
+                <br> <strong> Vamos entender um pouco mais sobre esse assunto! Link abaixo: </strong> </br>
+
+                <strong> <a href="./HTML/Links Auxiliares/Atividades-Link4.htm" id="link3"> Tudo o que voce precisa saber sobre atividade fisica! </a> </strong>
+
+                </div>
+            </div>
+        </div>      
+
+    </section>
+
+
+
+</body>
+</html>

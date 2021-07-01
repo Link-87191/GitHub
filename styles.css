@@ -1,0 +1,47 @@
+.PageLogin,
+.page {
+    background-color: gainsboro
+}
+
+ 
+.PageLogin{
+    margin-top: 25vh;    
+    margin-left: 30%;
+    margin-right: 35%;   
+    padding: 0 140;
+    justify-content: center; 
+}
+
+#ImgLogo{ 
+    margin-inline: 35% auto;
+    line-height: inherit;
+
+}
+
+
+#TablePesos, #TableCalorias, #TableAlimentos, #TableTreinos,
+header{
+    width: 60%;
+    margin: 20px auto;    
+    text-align: center;
+}
+
+.Cabecalho  {
+    font-size: xx-large;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
+    background-color: silver ;
+    text-align: center;
+}
+
+#CabPeso { background: rgb(175, 223, 200); }
+#CabCaloria { background: rgb(181, 236, 229); }
+#CabAlimento { background: rgb(102, 153, 119); }
+#CabTreino { background: rgb(145, 208, 235); }
+
+.Medidas    {
+    background-color: gainsboro;
+}
+
+
+

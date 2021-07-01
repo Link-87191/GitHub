@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html xml:lang="pt-br" lang="pt-BR" xmlns:fb="http://ogp.me/ns/fb#">
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"6a5485b2c2",applicationID:"625018719"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){d("pageHide",[p.now(),t])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1209.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+    <link href="https://brasilescola.uol.com.br/assets/images/favicon.ico" rel="shortcut icon" title="Favicon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+        <title>Importância das atividades físicas - Brasil Escola</title>
+        
+    <!-- Meta tags --> 
+        <meta name="description" content="Entenda a importância das atividades físicas para nosso corpo e por que o sedentarismo pode desencadear uma série de problemas graves." />
+        
+        <meta name="keywords" content="" />
+        <meta http-equiv="content-language" content="pt-br"/>
+    
+    <!-- Metas FB e twitter --> 
+    <meta property="og:locale" content="pt_BR" />
+        <meta property="og:title" content="Importância das atividades físicas - Brasil Escola" />
+    <meta property="twitter:title" content="Importância das atividades físicas - Brasil Escola" />
+            <meta name="og:description" content="Entenda a importância das atividades físicas para nosso corpo e por que o sedentarismo pode desencadear uma série de problemas graves.">
+    <meta property="twitter:description" content="Entenda a importância das atividades físicas para nosso corpo e por que o sedentarismo pode desencadear uma série de problemas graves." />
+        <meta property="og:site_name" content="Brasil Escola" />
+    <meta property="og:url" content="https://brasilescola.uol.com.br/saude-na-escola/importancia-das-atividades-fisicas.htm" />
+	    <meta property="og:image" content="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/2-atividade-fisica.jpg" />
+    
+    <!-- Twitter tags for big card -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:image" content="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/2-atividade-fisica.jpg" />
+        
+    <link rel="canonical" href="https://brasilescola.uol.com.br/saude-na-escola/importancia-das-atividades-fisicas.htm" />
+
+    <link rel="alternate" media="only screen and (max-width: 1024px)" href="https://m.brasilescola.uol.com.br/saude-na-escola/importancia-das-atividades-fisicas.htm" />
+
+    <link type="application/rss+xml" href="https://brasilescola.uol.com.br/rss/" rel="alternate" title="Conteúdo via RSS" />
+
+    <link type="application/rss+xml" href="https://brasilescola.uol.com.br/rss-podcasts" rel="alternate" title="Brasil Escola Podcasts" />
+
+        <link rel="amphtml" href="https://m.brasilescola.uol.com.br/amp/saude-na-escola/importancia-das-atividades-fisicas.htm" />
+    
+    
+    <script type="text/javascript">
+        const AUTH_URL = 'https://auth.brasilescola.uol.com.br';
+        const APP_URL = 'https://brasilescola.uol.com.br';
+        const API_URL = 'https://app.brasilescola.uol.com.br';
+        const CANONICAL = 'https://brasilescola.uol.com.br/saude-na-escola/importancia-das-atividades-fisicas.htm';
+        const YT_API_KEY = 'AIzaSyDa9nYAv25EjzmDzE0AtWxoErhr8lof6Zs';
+        const YT_CLIENT_ID = '512419952759-p3khdbd2tuvadra4nhm1u79vt4bpqleu.apps.googleusercontent.com';
+        const GOOGLE_CLIENT_ID = '512419952759-kh5pbn6jfvj2mhcmivlaot3h4ltv2ohb.apps.googleusercontent.com';
+        const BE_DOMAINS = JSON.parse('[{"domain":"educador","url":"https:\/\/educador.brasilescola.uol.com.br"},{"domain":"exercicios","url":"https:\/\/exercicios.brasilescola.uol.com.br"},{"domain":"monografias","url":"https:\/\/monografias.brasilescola.uol.com.br"},{"domain":"meuartigo","url":"https:\/\/meuartigo.brasilescola.uol.com.br"},{"domain":"vestibular","url":"https:\/\/vestibular.brasilescola.uol.com.br"}]');
+    </script>
+
+    <!-- ./END -->
+    <link rel="stylesheet" type="text/css" media="all" href="https://brasilescola.uol.com.br/assets/css/all-1.1.3.min.css" />
+
+
+<link rel="preload" href="https://brasilescola.uol.com.br/assets/fonts/Raleway-Thin.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="https://brasilescola.uol.com.br/assets/fonts/Raleway.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="https://brasilescola.uol.com.br/assets/fonts/Roboto-Regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="https://brasilescola.uol.com.br/assets/fonts/Raleway-Medium.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="https://brasilescola.uol.com.br/assets/fonts/Raleway-SemiBold.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="https://brasilescola.uol.com.br/assets/fonts/Raleway-Bold.woff" as="font" type="font/woff" crossorigin>
+
+    
+            <!-- Structured data -->
+        <script type="application/ld+json">
+            {"@context":"http:\/\/schema.org","@type":"Article","mainEntityOfPage":"https:\/\/brasilescola.uol.com.br\/saude-na-escola\/importancia-das-atividades-fisicas.htm","publisher":{"@type":"Organization","name":"Brasil Escola","logo":{"@type":"ImageObject","url":"https:\/\/brasilescola.uol.com.br\/assets\/images\/cabecalho\/logo.png","width":"196","height":"60"}},"headline":"Import\u00e2ncia das atividades f\u00edsicas","datePublished":"2019-06-11-0307:43:45","dateModified":"2019-06-11-0314:09:42","author":{"@type":"Person","name":"Vanessa Sardinha dos Santos"},"description":"Entenda a import\u00e2ncia das atividades f\u00edsicas para nosso corpo e por que o sedentarismo pode desencadear uma s\u00e9rie de problemas graves.","image":{"@type":"ImageObject","url":"https:\/\/s1.static.brasilescola.uol.com.br\/be\/conteudo\/images\/2-atividade-fisica.jpg"}}
+        </script>
+    
+        
+    <!-- UOL TAG MANAGER -->
+    <script type="text/javascript">
+        window.universal_variable = window.universal_variable || {};
+        window.universal_variable.dfp = {
+               "custom_params" : {
+                    "subchan" : ""
+                }
+        }
+        window.uolads = window.uolads || [];
+        (function() {
+            var scr = document.createElement("script");
+                scr.async = true;
+                scr.src = "//tm.jsuol.com.br/uoltm.js?id=fnht1u";
+            var el = document.getElementsByTagName("script")[0];
+                el.parentNode.insertBefore(scr, el);
+        })();
+    </script>
+    <!-- End UOL Tag Manager -->
+    
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-6338943-1"></script>
+    <script>  window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-6338943-1');
+    </script>
+    <!-- END GOOGLE ANALYTICS -->
+</head>    
+    <body>
+        <header class="principal__header">
+						<a href="https://brasilescola.uol.com.br">
+				<img src="https://brasilescola.uol.com.br/assets/images/cabecalho/logo.png" class="logo" alt="Brasil Escola" title="Brasil Escola"/>
+			</a>
+			
+	<div class="principal__header-right">
+		<form class="principal__header-pesquisa" action="https://brasilescola.uol.com.br/busca/" method="GET">
+			<input type="text" name="q" placeholder="Procure no site" required="required">
+			<input type="submit" value="">
+		</form>
+
+		<div class="principal__header-login" id="container-login"></div>
+	</div>
+</header>        <div class="box-social">
+    <div class="box-social__icons-box box-social__icons-box--options">
+        <div class="box-social__ico-options--share"></div>
+    </div>
+
+    <div class="box-social__blocos-compartilhaveis">
+        <div class="box-social__icons-box box-social__icons-box--twitter" data-title="Importância das atividades físicas" data-url="https://brasilescola.uol.com.br/saude-na-escola/importancia-das-atividades-fisicas.htm">
+            <img class="box-social__ico-twitter" src="https://brasilescola.uol.com.br/assets/images/social-share/twitter_ico.svg" alt="Twitter icon" />
+            <span class="box-social__twitter-title">Twitter</span>
+        </div>
+
+        <div class="box-social__icons-box box-social__icons-box--facebook" data-title="Importância das atividades físicas" data-url="https://brasilescola.uol.com.br/saude-na-escola/importancia-das-atividades-fisicas.htm">
+            <img class="box-social__ico-facebook" src="https://brasilescola.uol.com.br/assets/images/social-share/facebook_ico.svg" alt="Facebook icon" />
+            <span class="box-social__facebook-title">Facebook</span>
+        </div>
+
+        <div class="box-social__icons-box box-social__icons-box--whatsapp" data-title="Importância das atividades físicas" data-url="https://brasilescola.uol.com.br/saude-na-escola/importancia-das-atividades-fisicas.htm">
+            <img class="box-social__ico-whatsapp" src="https://brasilescola.uol.com.br/assets/images/social-share/whatsapp_ico.svg" alt="Whatsapp icon" />
+            <span class="box-social__whatsapp-title">Whatsapp</span>
+        </div>
+
+        <div class="box-social__icons-box box-social__icons-box--url">
+            <img class="box-social__ico-url" src="https://brasilescola.uol.com.br/assets/images/social-share/url_ico.svg" alt="Copy icon" />
+            <input type="text" class="box-social__url" name="urlencurtada" value="https://brasilesco.la/b123979"/>
+        </div>
+    </div>
+</div>
+        <div class="conteudo">
+            <div class="conteudo-principal">
+                <div class="menu">
+    <ul>
+                    <li class="menu__item menu__item--disciplinas">
+                
+                <div class="menu__icon--disciplinas">
+                    <a class="menu__link" href="https://brasilescola.uol.com.br/disciplinas/"  >
+                        Disciplinas
+                    </a>
+                </div>
+
+                                    <div class="menu__dropdown-box menu__dropdown-box--disciplinas">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/artes/">Artes</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/biografia/">Biografias</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/biologia/">Biologia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/espanhol/">Espanhol</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/educacao-fisica/">Educação Física</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/filosofia/">Filosofia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/fisica/">Física</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/geografia/">Geografia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/brasil/">Geografia do Brasil</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/gramatica/">Gramática</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/historia/">História</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/historia-da-america/">História da América</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/historiab/">História do Brasil</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/historiag/">História Geral</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/ingles/">Inglês</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/italiano/">Italiano</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/literatura/">Literatura</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/matematica/">Matemática</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/portugues/">Português</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/quimica/">Quí­mica</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/redacao/">Redação</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--disciplinas"   href="https://brasilescola.uol.com.br/sociologia/">Sociologia</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+                    <li class="menu__item menu__item--especial">
+                
+                <div class="menu__icon--especial">
+                    <a class="menu__link" href="https://brasilescola.uol.com.br/canais/"  >
+                        Especial
+                    </a>
+                </div>
+
+                                    <div class="menu__dropdown-box menu__dropdown-box--especial">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/datas-comemorativas/dia-dos-namorados.htm">Dia dos Namorados</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/detalhes-festa-junina">Festa Junina</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/detalhes-festa-junina/origem-festa-junina.htm">Origem da Festa Junina</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/detalhes-festa-junina/origem-festa-sao-joao.htm">Festa São João</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/videos/guia-de-profissoes.htm">Guia de Profissões</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/historiab/era-vargas.htm">Era Vargas</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/curiosidades/distanciamento-social.htm">Distanciamento social</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/animais/gafanhotos.htm">Gafanhotos</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/curiosidades/isolamento-vertical-e-horizontal.htm">Isolamento vertical e horizontal</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/doencas/pandemia.htm">Pandemia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/historiag/revolucao-industrial.htm">Revolução industrial</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/sociologia/consciencia-negra.htm">Consciência negra</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/doencas/coronavirus-covid-19.htm">COVID-19</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/historiag/i-guerra-mundial-gripe-espanhola-inimigos-visiveis-invisiveis.htm">Gripe espanhola</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/geografia/mapa-brasil.htm">Mapa do Brasil</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/o-que-e/biologia/o-que-e-quarentena.htm">O que é quarentena?</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/datas-comemorativas/dia-nacional-da-agua.htm">Dia da água</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/filosofia/o-que-e-filosofia.htm">O que é Filosofia? </a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/gramatica/acentuacao.htm">Acentuação</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/saude/quais-os-riscos-que-ansiedade-pode-trazer-para-aluno.htm">Riscos da ansiedade</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/gramatica/por-que.htm">Uso dos porquês</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/sociologia/dia-consciencia-negra-heroi-chamado-zumbi.htm">Movimento negro</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/fisica/leis-newton.htm">Leis de Newton</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--especial"   href="https://brasilescola.uol.com.br/pascoa/pascoa-crista.htm">Páscoa Cristã</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+                    <li class="menu__item menu__item--pesquisas">
+                
+                <div class="menu__icon--pesquisas">
+                    <a class="menu__link" href="https://brasilescola.uol.com.br/canais/"  >
+                        + Pesquisas
+                    </a>
+                </div>
+
+                                    <div class="menu__dropdown-box menu__dropdown-box--pesquisas">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/acordo-ortografico/">Acordo Ortográfico</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/animais/">Animais</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/cultura/">Cultura</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/curiosidades/">Curiosidades</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/datas-comemorativas/">Datas Comemorativas</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/dicas-de-estudo/">Dicas de Estudo</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/doencas/">Doenças</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/drogas/">Drogas</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/economia/">Economia e Finanças</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/educacao/">Educação</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/educacao/encceja-exame-nacional-para-certificacao-competencias-jovens-adultos.htm">Encceja</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/folclore/">Folclore</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/fonoaudiologia/">Fonoaudiologia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/frutas/">Frutas</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/informatica/">Informática</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/mitologia/">Mitologia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/politica/">Política</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/psicologia/">Psicologia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/religiao/">Religião</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://monografias.brasilescola.uol.com.br/regras-abnt/">Regras da ABNT</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/sexualidade/">Sexualidade</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/saude/">Saúde e Bem-estar</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--pesquisas"   href="https://brasilescola.uol.com.br/saude-na-escola/">Saúde na Escola</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+                    <li class="menu__item menu__item--enem">
+                
+                <div class="menu__icon--enem">
+                    <a class="menu__link" href="https://vestibular.brasilescola.uol.com.br/enem/"  >
+                        Enem
+                    </a>
+                </div>
+
+                                    <div class="menu__dropdown-box menu__dropdown-box--enem">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/resultado-do-enem-2020.htm">Resultado do Enem 2020</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/enem-2021.htm">Enem 2021</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/lista-adesao-enem.htm">Adesão</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/atendimento-especifico-especializado-no-enem.htm">Atendimento Especial</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/como-obter-certificado-conclusao-ensino-medio-pelo-enem.htm">Certificação</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/como-estudar-para-o-enem-2020.htm">Como estudar</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/criterio-correcao-das-redacoes-enem.htm">Correção da Redação</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/dicas-para-enem.htm">Dicas para o Enem</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/enem-prouni.htm">Enem e ProUni</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/como-estudar-portugal-pelo-enem.htm">Estudar em Portugal</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/fies">FIES</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/como-se-inscrever-no-enem-2020.htm">Inscrição Enem</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/como-conseguir-isencao-taxa-inscricao-enem.htm">Isenção da taxa</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/como-calcular-media-enem.htm">Média do Enem</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/como-calcular-nota-enem.htm">Nota do Enem</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/noticias/">Notícias</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/por-que-fazer-enem.htm">Por que fazer?</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/banco-de-redacoes/">Pratique sua redação</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/provas-gabaritos-enem.htm">Provas e Gabaritos</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/como-fazer-redacao-enem.htm">Redação do Enem</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/quem-pode-fazer-o-enem.htm">Quem pode fazer</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/simulado/">Simulado</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/sisu.htm">SiSU</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--enem"   href="https://vestibular.brasilescola.uol.com.br/enem/o-que-eu-posso-fazer-com-media-enem.htm">Usando a nota do Enem</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+                    <li class="menu__item menu__item--vestibular">
+                
+                <div class="menu__icon--vestibular">
+                    <a class="menu__link" href="https://vestibular.brasilescola.uol.com.br"  >
+                        Vestibular
+                    </a>
+                </div>
+
+                                    <div class="menu__dropdown-box menu__dropdown-box--vestibular">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/agenda/">Agenda</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/aprovados/">Aprovados</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/atualidades/">Atualidades</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/banco-de-redacoes/">Banco de Redações</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular" target=_blank  href="https://vestibular.brasilescola.uol.com.br/bolsas-estudo/">Bolsa de Estudo</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/correcoes-provas/">Correções de Vestibular</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular" target=_blank  href="https://vestibular.brasilescola.uol.com.br/cotas/">Cotas</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/cursinhos-comunitarios/">Cursinhos Comunitários</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/dicas/">Dicas</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/ensino-distancia/">Ensino a Distância</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/estudar-no-exterior/">Estudar no Exterior</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/fies">Fies</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/fuvest/">Fuvest</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/guia-de-profissoes/">Profissões</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular" target=_blank  href="https://vestibular.brasilescola.uol.com.br/intercambio/">Intercâmbio</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/noticias/">Notícias Vestibular</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/livros-vestibulares/">Obras literárias</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/orientacao-vocacional/">Orientação Vocacional</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/prouni/">ProUni</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/downloads/">Provas</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/resumos-de-livros/">Resumo de Livros</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/simulado/">Simulado</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/universidades/">Universidades</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--vestibular"   href="https://vestibular.brasilescola.uol.com.br/vida-profissional">Vida Profissional</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+                    <li class="menu__item menu__item--educador">
+                
+                <div class="menu__icon--educador">
+                    <a class="menu__link" href="https://educador.brasilescola.uol.com.br"  >
+                        Educador
+                    </a>
+                </div>
+
+                                    <div class="menu__dropdown-box menu__dropdown-box--educador">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--educador"   href="https://educador.brasilescola.uol.com.br/comportamento/">Comportamento</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--educador"   href="https://educador.brasilescola.uol.com.br/estrategias-ensino/">Estratégia de Ensino</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--educador"   href="https://educador.brasilescola.uol.com.br/etica/">Ética</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--educador"   href="https://educador.brasilescola.uol.com.br/gestao-educacional/">Gestão Educacional</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--educador"   href="https://educador.brasilescola.uol.com.br/orientacao-escolar/">Orientação Escolar</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--educador"   href="https://educador.brasilescola.uol.com.br/orientacao-escolar/orientacoes-para-pais.htm">Orientações para Pais ou Responsáveis</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--educador"   href="https://educador.brasilescola.uol.com.br/orientacoes/">Orientações para Professores</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--educador"   href="https://educador.brasilescola.uol.com.br/politica-educacional/">Política Educacional</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--educador"   href="https://educador.brasilescola.uol.com.br/sugestoes-pais-professores/">Sugestões para Pais e Professores</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--educador"   href="https://educador.brasilescola.uol.com.br/sos-educacao">SOS Educação</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--educador"   href="https://educador.brasilescola.uol.com.br/trabalho-docente/">Trabalho Docente</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+                    <li class="menu__item menu__item--o_que_e">
+                
+                <div class="menu__icon--o_que_e">
+                    <a class="menu__link" href="https://brasilescola.uol.com.br/o-que-e/"  >
+                        O que é?
+                    </a>
+                </div>
+
+                                    <div class="menu__dropdown-box menu__dropdown-box--o_que_e">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--o_que_e"   href="https://brasilescola.uol.com.br/o-que-e/biologia/">O que é Biologia?</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--o_que_e"   href="https://brasilescola.uol.com.br/o-que-e/fisica/">O que é Física?</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--o_que_e"   href="https://brasilescola.uol.com.br/o-que-e/geografia/">O que é Geografia?</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--o_que_e"   href="https://brasilescola.uol.com.br/o-que-e/historia/">O que é História?</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--o_que_e"   href="https://brasilescola.uol.com.br/o-que-e/matematica/">O que é Matemática?</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--o_que_e"   href="https://brasilescola.uol.com.br/o-que-e/portugues/">O que é Português?</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--o_que_e"   href="https://brasilescola.uol.com.br/o-que-e/quimica/">O que é Química?</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+                    <li class="menu__item menu__item--exercicios">
+                
+                <div class="menu__icon--exercicios">
+                    <a class="menu__link" href="https://exercicios.brasilescola.uol.com.br"  >
+                        Exercícios
+                    </a>
+                </div>
+
+                                    <div class="menu__dropdown-box menu__dropdown-box--exercicios">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--exercicios"   href="https://exercicios.brasilescola.uol.com.br/exercicios-biologia/">Exercícios de Biologia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--exercicios"   href="https://exercicios.brasilescola.uol.com.br/exercicios-fisica">Exercícios de Física</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--exercicios"   href="https://exercicios.brasilescola.uol.com.br/exercicios-geografia">Exercícios de Geografia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--exercicios"   href="https://exercicios.brasilescola.uol.com.br/exercicios-geografia-do-brasil">Geografia do Brasil</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--exercicios"   href="https://exercicios.brasilescola.uol.com.br/exercicios-gramatica">Exercícios de Gramática</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--exercicios"   href="https://exercicios.brasilescola.uol.com.br/exercicios-historia-do-brasil">Exercícios de História do Brasil</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--exercicios"   href="https://exercicios.brasilescola.uol.com.br/exercicios-historia">Exercícios de História Geral</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--exercicios"   href="https://exercicios.brasilescola.uol.com.br/exercicios-literatura">Exercícios de Literatura</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--exercicios"   href="https://exercicios.brasilescola.uol.com.br/exercicios-matematica">Exercícios de Matemática</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--exercicios"   href="https://exercicios.brasilescola.uol.com.br/exercicios-quimica">Exercícios de Química</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--exercicios"   href="https://exercicios.brasilescola.uol.com.br/exercicios-redacao">Exercícios de Redação</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+                    <li class="menu__item menu__item--monografias">
+                
+                <div class="menu__icon--monografias">
+                    <a class="menu__link" href="https://monografias.brasilescola.uol.com.br"  >
+                        Monografias
+                    </a>
+                </div>
+
+                                    <div class="menu__dropdown-box menu__dropdown-box--monografias">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/administracao-financas/">Administração e Finanças</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/agricultura-pecuaria/">Agricultura e Pecuária</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/arte-cultura/">Arte e Cultura</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/biologia/">Biologia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/computacao/">Computação</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/direito/">Direito</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/educacao/">Educação</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/educacao-fisica/">Educação Física</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/enfermagem/">Enfermagem</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/engenharia/">Engenharia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/filosofia/">Filosofia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/fisica/">Física</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/geografia/">Geografia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/historia/">História</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/matematica/">Matemática</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/medicina/">Medicina</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/pedagogia/">Pedagogia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/psicologia/">Psicologia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/quimica/">Química</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/religiao/">Religião</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/regras-abnt/">Regras da ABNT</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/saude/">Saúde</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/sociologia/">Sociologia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--monografias"   href="https://monografias.brasilescola.uol.com.br/turismo/">Turismo</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+                    <li class="menu__item menu__item--escola_kids">
+                
+                <div class="menu__icon--escola_kids">
+                    <a class="menu__link" href="https://escolakids.uol.com.br" target=_blank >
+                        Escola Kids
+                    </a>
+                </div>
+
+                                    <div class="menu__dropdown-box menu__dropdown-box--escola_kids">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--escola_kids" target=_blank  href="https://escolakids.uol.com.br/ciencias/">Ciências</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--escola_kids" target=_blank  href="https://escolakids.uol.com.br/geografia/">Geografia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--escola_kids"   href="https://escolakids.uol.com.br/historia/">História</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--escola_kids" target=_blank  href="https://escolakids.uol.com.br/matematica/">Matemática</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--escola_kids" target=_blank  href="https://escolakids.uol.com.br/portugues/">Português</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--escola_kids" target=_blank  href="https://escolakids.uol.com.br/datas-comemorativas/">Datas Comemorativas</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--escola_kids"   href="https://escolakids.uol.com.br/historias/">Histórias para crianças</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--escola_kids"   href="https://escolakids.uol.com.br/jogos/">Jogos</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--escola_kids"   href="https://escolakids.uol.com.br/para-pintar/">Para pintar</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+                    <li class="menu__item menu__item--videos">
+                
+                <div class="menu__icon--videos">
+                    <a class="menu__link" href="https://brasilescola.uol.com.br/videos/"  >
+                        Vídeos
+                    </a>
+                </div>
+
+                                    <div class="menu__dropdown-box menu__dropdown-box--videos">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--videos"   href="//brasilescola.uol.com.br/videos/biologia.htm">Videoaulas de Biologia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--videos"   href="//brasilescola.uol.com.br/videos/espanhol.htm">Videoaulas de Espanhol</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--videos"   href="https://brasilescola.uol.com.br/videos/filosofia.htm">Videoaulas de Filosofia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--videos"   href="//brasilescola.uol.com.br/videos/fisica.htm">Videoaulas de Física</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--videos"   href="//brasilescola.uol.com.br/videos/geografia.htm">Videoaulas de Geografia</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--videos"   href="//brasilescola.uol.com.br/videos/historia.htm">Videoaulas de História</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--videos"   href="//brasilescola.uol.com.br/videos/ingles.htm">Videoaulas de Inglês</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--videos"   href="//brasilescola.uol.com.br/videos/matematica.htm">Videoaulas de Matemática</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--videos"   href="//brasilescola.uol.com.br/videos/portugues.htm">Videoaulas de Português</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--videos"   href="//brasilescola.uol.com.br/videos/quimica.htm">Videoaulas de Química</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--videos"   href="https://brasilescola.uol.com.br/videos/sociologia.htm">Videoaulas de Sociologia</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+                    <li class="menu__item menu__item--canais">
+                
+                <div class="menu__icon--canais">
+                    <a class="menu__link" href="https://brasilescola.uol.com.br/canais/"  >
+                        + Canais
+                    </a>
+                </div>
+
+                                    <div class="menu__dropdown-box menu__dropdown-box--canais">
+                        <ul class="menu__dropdown-itens menu__dropdown-itens--full">
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--canais"   href="https://brasilescola.uol.com.br/clube-do-empreendedorismo">Clube do Empreendedorismo</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--canais"   href="https://educador.brasilescola.uol.com.br">Educador</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--canais"   href="https://vestibular.brasilescola.uol.com.br/enem/">Enem</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--canais"   href="https://exercicios.brasilescola.uol.com.br">Exercícios</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--canais"   href="https://brasilescola.uol.com.br/guerras">Guerras</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--canais"   href="https://brasilescola.uol.com.br/saude-na-escola/dicas-lanches-criativos-saudaveis-para-crianca-na-escola.htm">Lanchinhos</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--canais"   href="https://meuartigo.brasilescola.uol.com.br">Meu Artigo</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--canais"   href="https://monografias.brasilescola.uol.com.br">Monografias</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--canais"   href="https://brasilescola.uol.com.br/noticias/">Notícias</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--canais"   href="https://brasilescola.uol.com.br/podcasts">Podcasts</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--canais"   href="https://vestibular.brasilescola.uol.com.br">Vestibular</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--canais"   href="https://educador.brasilescola.uol.com.br/sos-educacao">SOS Educação</a>
+                                </li>
+                                                            <li class="menu__dropdown-item">
+                                    <a class="menu__dropdown-link menu__dropdown-link--canais"   href="https://brasilescola.uol.com.br/videos/">Vídeos</a>
+                                </li>
+                                                            
+                                                    </ul>
+                        <!--<span class="clear"></span>-->
+                    </div>
+                            </li>
+            </ul>
+    <!--<span class="clear"></span>-->
+</div>
+
+    <div class="container-publicidade-cima">
+        <!-- 1. Topo - 728x90, 970x250, 970x90 -->
+        <div class="publicidade-cima">
+            <div class="box-publicidade-topo">
+                <!-- 728x90 - 1 - UOL AD --><div id="banner-728x90-area">
+<script>window.uolads && window.uolads.push({ id: "banner-728x90-area" });</script>
+</div>
+            </div>
+        </div>
+    </div>
+
+                
+                <div class="bloco">
+                    
+                    <div class="grid-1" id="box-pub-flutuante">
+                                                    <!--breadcrumbs-->
+<div id="breadcrumbs">
+    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a itemtype="https://schema.org/Thing" itemprop="item" href="https://brasilescola.uol.com.br">
+            <span itemprop="name">Home</span></a>
+            <meta itemprop="position" content="1" />
+        </li>
+
+                                <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                                <a itemtype="https://schema.org/Thing" itemprop="item" href="https://brasilescola.uol.com.br/saude-na-escola">
+                                    <span itemprop="name">Saúde na escola</span>
+                    <meta itemprop="position" content="2" />
+                </a>
+            </li>
+                                            <li class="pag-selecionada">
+                <span>Importância das atividades físicas</span>
+            </li>
+                        </ol>
+</div>                        
+                            <div class="fonte f-direita noselect">
+    <a href="https://brasilescola.uol.com.br/imprimir/123979" class="imprimir" target="_blank">Imprimir</a><span>Texto</span><a class="a-menos">-A</a><a class="a-mais">+A</a>
+</div>
+<span class="clear"></span>                        
+                        <div id="conteudo-new" class="conteudo-pagina ">
+                            <div class="br-grid-2 ">
+                                
+                                                                    <!--Nome artigo-->
+                                    <h1 class="titulo-definicao">Importância das atividades físicas</h1>
+
+                                    <!--Secao Principal-->
+                                    <h3 class="disciplinas">Saúde na escola</h3>
+                                
+                                <!--Resumo-->
+							    <span class="definicao">A importância das atividades físicas vai além da perda de peso, estando relacionada com a prevenção de doenças, como a hipertensão e o diabetes.</span>
+
+                                <!--Compartilhamento topo-->
+                                
+                                <div class="conteudo-materia">						
+                                    <div>
+                                                                                    <!-- Start Audima Widget Injection -->
+                                            <div id="audimaWidget"></div>
+                                            <script async src="https://audio7.audima.co/audima-widget.js"></script>
+                                            <!-- End Audima Widget Injection -->
+                                        
+                                        <div class="publicidade-content f-esquerda omnia-new-ads">
+                                                                                            <span class="omnia-new-ads-span">
+                                                    PUBLICIDADE
+                                                </span>
+
+                                                <div style='height:250px; width:300px;'><!-- 300x250 - 1 - UOL AD --><div id="banner-300x250-area"><script>window.uolads && window.uolads.push({ id: "banner-300x250-area" });</script></div></div>
+                                                                                    </div>
+                                        
+                                        <div><p style="text-align:justify">A <strong>pr&aacute;tica de atividade f&iacute;sica</strong> &eacute;, sem d&uacute;vida, essencial para aumentarmos nossa <strong>qualidade de vida</strong>. In&uacute;meros estudos demonstram como a pr&aacute;tica frequente de atividade f&iacute;sica evita doen&ccedil;as e melhora, at&eacute; mesmo, nossa disposi&ccedil;&atilde;o para a realiza&ccedil;&atilde;o de nossas atividades di&aacute;rias. A seguir, listaremos os principais benef&iacute;cios de se praticar atividades f&iacute;sicas e tamb&eacute;m os riscos de se ter uma vida sedent&aacute;ria.</p>
+
+<p style="text-align:justify"><strong>Leia tamb&eacute;m: </strong><a href="https://brasilescola.uol.com.br/saude/atividades-fisicas-gripe.htm">Exerc&iacute;cios f&iacute;sicos e a gripe</a></p>
+
+<h2 style="text-align:justify">&rarr; <strong>A import&acirc;ncia da atividade f&iacute;sica na promo&ccedil;&atilde;o da sa&uacute;de</strong></h2>
+
+<p style="text-align:justify">As atividades f&iacute;sicas geram uma grande quantidade de <strong>benef&iacute;cios</strong> para o nosso corpo e tamb&eacute;m para nossa mente. &Eacute; por isso que a pr&aacute;tica dessas atividades &eacute; t&atilde;o recomendada por todos os profissionais de sa&uacute;de. A seguir, listaremos alguns dos benef&iacute;cios j&aacute; reconhecidos a respeito da import&acirc;ncia das atividades f&iacute;sicas:</p>
+
+<ul>
+	<li>
+	<p style="text-align:justify">A atividade f&iacute;sica previne o desenvolvimento de doen&ccedil;as cr&ocirc;nicas, como <a href="https://brasilescola.uol.com.br/doencas/hipertensao.htm">hipertens&atilde;o</a> e <a href="https://brasilescola.uol.com.br/saude-na-escola/diabetescuidados-com-saude.htm">diabetes.</a></p>
+	</li>
+	<li>
+	<p style="text-align:justify">As atividades f&iacute;sicas controlam os n&iacute;veis de <a href="https://brasilescola.uol.com.br/saude-na-escola/colesterol.htm">colesterol.</a></p>
+	</li>
+	<li>
+	<p style="text-align:justify">A atividade f&iacute;sica pode ser uma importante aliada no tratamento da <a href="https://brasilescola.uol.com.br/saude-na-escola/depressao.htm">depress&atilde;o</a> e ansiedade.</p>
+	</li>
+	<li>
+	<p style="text-align:justify">A atividade f&iacute;sica melhora o condicionamento muscular e tamb&eacute;m cardiorrespirat&oacute;rio.</p>
+	</li>
+	<li>
+	<p style="text-align:justify">A atividade f&iacute;sica provoca uma s&eacute;rie de mudan&ccedil;as no organismo, tais como o ganho de massa muscular, que est&aacute; diretamente relacionado com a melhora da autoestima.</p>
+	</li>
+	<li>
+	<p style="text-align:justify">A atividade f&iacute;sica &eacute; importante para o controle de peso.</p>
+	</li>
+	<li>
+	<p style="text-align:justify">Atividade f&iacute;sica melhora dores e diminui a incapacidade funcional.</p>
+	</li>
+	<li>
+	<p style="text-align:justify">A pr&aacute;tica de atividades f&iacute;sicas melhora a qualidade do sono.</p>
+	</li>
+	<li>
+	<p style="text-align:justify">As atividades f&iacute;sicas melhoram o desempenho cognitivo.</p>
+	</li>
+	<li>
+	<p style="text-align:justify">A pr&aacute;tica de atividades f&iacute;sicas reduz o estresse e aumenta a sensa&ccedil;&atilde;o de bem-estar.</p>
+	</li>
+</ul>
+
+<p style="text-align:center"><span style="font-size:14px"><img alt="A pr&aacute;tica de atividades f&iacute;sicas por idosos garante uma maior autonomia." height="333" src="https://s4.static.brasilescola.uol.com.br/img/2019/06/idosos-fazendo-atividade-fisica.jpg" width="600"><br>
+A pr&aacute;tica de atividades f&iacute;sicas por idosos garante uma maior autonomia.</span></p>
+
+<ul>
+	<li>
+	<p style="text-align:justify">A atividade f&iacute;sica &eacute; importante no processo de envelhecimento, uma vez que um idoso ativo apresenta mais autonomia para realizar as atividades do seu dia a dia. Al&eacute;m disso, idosos que praticam atividades f&iacute;sicas apresentam menos riscos de sofrerem quedas, as quais podem ser graves em certas idades.</p>
+	</li>
+	<li>
+	<p style="text-align:justify">A atividade pode melhorar o conv&iacute;vio social.</p>
+	</li>
+	<li>
+	<p style="text-align:justify">A atividade f&iacute;sica d&aacute; mais disposi&ccedil;&atilde;o para a realiza&ccedil;&atilde;o das atividades di&aacute;rias.</p>
+	</li>
+</ul>
+
+<p style="text-align:justify"><strong><div class='pub_insert_content_titulo'>Não pare agora... Tem mais depois da publicidade ;)</div><div class='pub_insert_content'><div style='margin: auto; width: 300px;'><div style='height:250px; width:300px;'><!-- 300x250 - 2 - UOL AD --><div id="banner-300x250-2-area"><script>window.uolads && window.uolads.push({ id: "banner-300x250-2-area" });</script></div></div></div></div></strong></p>
+
+<div class="table-responsive"><table border="1" cellpadding="4" cellspacing="0" style="width:100%">
+	<tbody>
+		<tr>
+			<td style="background-color:#ffccff">
+			<p style="text-align:center"><strong>Aten&ccedil;&atilde;o: Antes de iniciar a pr&aacute;tica de uma atividade f&iacute;sica, converse com o seu m&eacute;dico e veja quais podem ser realizadas por voc&ecirc;. Al&eacute;m disso, determinados exerc&iacute;cios precisam de acompanhamento de um profissional qualificado, uma vez que h&aacute; risco de les&otilde;es. N&atilde;o se esque&ccedil;a tamb&eacute;m de estar sempre alimentado e hidratado na hora da atividade f&iacute;sica.</strong></p>
+			</td>
+		</tr>
+	</tbody>
+</table></div>
+
+<p style="text-align:justify"><br>
+<strong>Leia tamb&eacute;m: </strong><a href="https://brasilescola.uol.com.br/saude/suplementacao-alimentar-atividades-fisicas.htm">Suplementa&ccedil;&atilde;o alimentar e exerc&iacute;cios f&iacute;sicos</a></p>
+
+<h2 style="text-align:justify">&rarr; <strong>Quantos minutos de atividades f&iacute;sicas &eacute; o ideal?</strong></h2>
+
+<p style="text-align:justify">Apesar de muitas pessoas afirmarem que n&atilde;o possuem tempo para a realiza&ccedil;&atilde;o de atividade f&iacute;sica, as recomenda&ccedil;&otilde;es di&aacute;rias s&atilde;o relativamente baixas e podem ser inclu&iacute;das na agenda de atividades di&aacute;rias. <strong>De acordo com a Organiza&ccedil;&atilde;o Mundial de Sa&uacute;de, a recomenda&ccedil;&atilde;o:</strong></p>
+
+<ul>
+	<li>
+	<p style="text-align:justify"><strong>150 minutos semanais de atividade f&iacute;sica leve ou moderada</strong>, o que corresponde a um pouco mais de 20 minutos di&aacute;rios de atividades.</p>
+	</li>
+	<li>
+	<p style="text-align:justify"><strong>75 minutos semanas de atividade f&iacute;sica de maior intensidade</strong>, o que corresponde a pouco mais de 10 minutos por dia.</p>
+	</li>
+</ul>
+
+<p style="text-align:justify">Mudar um h&aacute;bito de vida &eacute; extremamente dif&iacute;cil, entretanto, <strong>incluir</strong> <strong>exerc&iacute;cios</strong> <strong>na</strong> <strong>sua</strong> <strong>rotina</strong> &eacute; fundamental para a sa&uacute;de. Diante dessa necessidade, o Minist&eacute;rio da Sa&uacute;de d&aacute; quatro dicas importantes para come&ccedil;ar a pr&aacute;tica de atividades f&iacute;sicas:</p>
+
+<ol>
+	<li>
+	<p style="text-align:justify">Encontre um local adequado para praticar as atividades f&iacute;sicas, como parques, pra&ccedil;as e similares;</p>
+	</li>
+	<li>
+	<p style="text-align:justify">Comece com uma atividade que n&atilde;o exige alto preparo f&iacute;sico;</p>
+	</li>
+	<li>
+	<p style="text-align:justify">Praticar atividade f&iacute;sica perto de casa n&atilde;o exigindo grandes deslocamentos, o que ajuda na manuten&ccedil;&atilde;o desse h&aacute;bito;</p>
+	</li>
+	<li>
+	<p style="text-align:justify">Procure atividades realizadas por v&aacute;rias pessoas, inclusive do seu c&iacute;rculo de amizade, o que poder&aacute; ser um est&iacute;mulo a mais.</p>
+	</li>
+</ol>
+
+<h2 style="text-align:justify">&rarr; <strong>Riscos do sedentarismo</strong></h2>
+
+<p style="text-align:justify">O sedentarismo pode ser definido, de uma maneira resumida, como a <strong>falta da pr&aacute;tica de exerc&iacute;cios</strong> f&iacute;sicos regulares. Muitas pessoas em nosso planeta s&atilde;o sedent&aacute;rias e esse h&aacute;bito, juntamente com uma alimenta&ccedil;&atilde;o inadequada, tem gerado uma s&eacute;rie de problemas graves para a sa&uacute;de da popula&ccedil;&atilde;o.</p>
+
+<div class="table-responsive"><table border="1" cellpadding="4" cellspacing="0" style="width:100%">
+	<tbody>
+		<tr>
+			<td style="background-color:#ffccff">
+			<p style="text-align:center"><strong>Segundo a Organiza&ccedil;&atilde;o Mundial de Sa&uacute;de, um em cada cinco adultos e quatro em cada cinco adolescentes n&atilde;o praticam atividade f&iacute;sica suficiente. </strong></p>
+			</td>
+		</tr>
+	</tbody>
+</table></div>
+
+<p style="text-align:justify"><br>
+Como sabemos, a atividade f&iacute;sica &eacute; uma maneira importante de prevenir o desenvolvimento de doen&ccedil;as cr&ocirc;nicas n&atilde;o transmiss&iacute;veis, tais como problemas cardiovasculares, diabetes e alguns tipos de c&acirc;ncer. <strong>As pessoas sedent&aacute;rias apresentam at&eacute; 30% mais riscos de desenvolver esses problemas.</strong> N&atilde;o podemos nos esquecer ainda da obesidade que &eacute; tamb&eacute;m um problema de sa&uacute;de cr&ocirc;nico, que al&eacute;m de afetar negativamente a sa&uacute;de f&iacute;sica da pessoa, afeta diretamente a autoestima.</p>
+
+<p style="text-align:center"><span style="font-size:14px"><img alt="A pr&aacute;tica de atividades f&iacute;sicas melhora a autoestima e alivia o estresse." height="333" src="https://s3.static.brasilescola.uol.com.br/img/2019/06/mulher-fazendo-atividade-fisica.jpg" width="600"><br>
+A pr&aacute;tica de atividades f&iacute;sicas melhora a autoestima e alivia o estresse.</span></p>
+
+<p style="text-align:justify">Percebemos, portanto, que a atividade f&iacute;sica &eacute; importante nos mais variados aspectos da nossa vida e &eacute; essencial para uma <strong>vida mais saud&aacute;vel</strong> e um e<strong>nvelhecimento tranquilo</strong>. Procure seu m&eacute;dico e comece o quanto antes a mudar sua vida.<br>
+<br>
+Por Ma. Vanessa Sardinha dos Santos</p>
+</div>
+
+
+                                        <!--imagem de destaque-->
+                                                                                    <figure class="imagem-principal">
+                                                <img src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/2-atividade-fisica.jpg" onerror="this.src='https://brasilescola.uol.com.br/assets/images/no-image.jpg'" alt="A prática de atividade física está diretamente relacionada com a melhora da qualidade de vida de uma pessoa." title="Atividade física" />
+                                                
+                                                <figcaption>
+                                                    A prática de atividade física está diretamente relacionada com a melhora da qualidade de vida de uma pessoa.
+                                                </figcaption>
+                                            </figure>
+                                         
+                                    </div>
+                                    <span class="clear"></span>
+
+                                    <!-- Referências -->
+                                                                            <div style="height: 250px;">
+                                            <div style="border: 1px solid; padding: 10px; margin-bottom: 15px; width: 560px; height: 227px; float: left; position: relative;">
+                                                <p>
+                                                    Gostaria de fazer a referência deste texto em um trabalho escolar ou acadêmico? Veja:
+                                                </p>
+                                                
+                                                <p>
+                                                    SANTOS, Vanessa Sardinha dos.
+                                                    "Importância das atividades físicas"; <i>Brasil Escola</i>. 
+                                                    Disponível em: https://brasilescola.uol.com.br/saude-na-escola/importancia-das-atividades-fisicas.htm. Acesso em 24 de junho 
+                                                    de 2021.
+                                                </p>
+                                            </div>
+
+                                            <div style="position: relative; float: right;">
+                                                                                                    <div style='height:250px; width:300px;'><!-- 300x250 - 3 - UOL AD --><div id="banner-300x250-3-area"><script>window.uolads && window.uolads.push({ id: "banner-300x250-3-area" });</script></div></div>
+                                                                                            </div>
+                                        </div>
+                                                                    </div>
+                                <span class="clear"></span>
+
+                                <!--vídeos-->
+                                <!-- Vídeos -->
+                                
+                                <!-- Exercícios relacionados (2 primeiras questões) -->
+                                                                
+                                <!--Artigos Relacionados-->
+                                                                    <div class="artigos-relacionados">
+                                        <div class="artigos-relacionados__titulo-bloco">
+                                            Artigos <b>Relacionados</b>
+                                        </div>
+
+                                        <div class="omnia-container">
+                                                                                            <div class="omnia-row artigos-relacionados__bloco">
+                                                    <div class="omnia-col-4 artigos-relacionados__bloco-imagem">
+                                                                                                                    <a class="artigos-relacionas__bloco-imagem--link-color" href="https://brasilescola.uol.com.br/saude/5-dicas-para-melhorar-a-imunidade.htm">
+                                                                <div class="artigos-relacionados__secao">Saúde e Bem-estar</div>
+                                                                <img class="lozad artigos-relacionados__imagem" data-src="https://s1.static.brasilescola.uol.com.br/be/2020/03/sono.jpg" alt="" title="" src="https://brasilescola.uol.com.br/assets/images/loading.gif" onerror="this.src='https://brasilescola.uol.com.br/assets/images/no-image.jpg'"/>
+                                                            </a>
+                                                                                                            </div>
+
+                                                    <div class="omnia-col-8 artigos-relacionados__bloco-info">
+                                                        <div><a class="artigos-relacionados__titulo" href="https://brasilescola.uol.com.br/saude/5-dicas-para-melhorar-a-imunidade.htm">5 dicas para melhorar a imunidade</a></div>
+                                                        <div class="artigos-relacionados__descricao">Que tal aprender 5 dicas para melhorar a imunidade? Clique aqui e confira formas simples de melhorar a defesa do seu organismo contra doenças.</div>
+                                                    </div>
+
+                                                                                                        <div class="artigos-relacionados__separador"></div>
+                                                                                                    </div>
+                                                                                            <div class="omnia-row artigos-relacionados__bloco">
+                                                    <div class="omnia-col-4 artigos-relacionados__bloco-imagem">
+                                                                                                            </div>
+
+                                                    <div class="omnia-col-8 artigos-relacionados__bloco-info">
+                                                        <div><a class="artigos-relacionados__titulo" href="https://brasilescola.uol.com.br/datas-comemorativas/dia-mundial-da-saude.htm">7 de abril - Dia Mundial da Saúde</a></div>
+                                                        <div class="artigos-relacionados__descricao">Você sabe quando é comemorado o Dia Mundial da Saúde? Clique aqui, descubra mais sobre a data, e conheça formas de manter a saúde nos dias atuais.</div>
+                                                    </div>
+
+                                                                                                        <div class="artigos-relacionados__separador"></div>
+                                                                                                    </div>
+                                                                                            <div class="omnia-row artigos-relacionados__bloco">
+                                                    <div class="omnia-col-4 artigos-relacionados__bloco-imagem">
+                                                                                                                    <a class="artigos-relacionas__bloco-imagem--link-color" href="https://brasilescola.uol.com.br/educacao-fisica/atividade-fisica-durante-inverno.htm">
+                                                                <div class="artigos-relacionados__secao">Educação Física</div>
+                                                                <img class="lozad artigos-relacionados__imagem" data-src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/durante-inverno-periodo-aquecimento-alongamento-devem-ser-maiores-1308235178.jpg" alt="Durante o inverno o período de aquecimento e o alongamento devem ser maiores." title="" src="https://brasilescola.uol.com.br/assets/images/loading.gif" onerror="this.src='https://brasilescola.uol.com.br/assets/images/no-image.jpg'"/>
+                                                            </a>
+                                                                                                            </div>
+
+                                                    <div class="omnia-col-8 artigos-relacionados__bloco-info">
+                                                        <div><a class="artigos-relacionados__titulo" href="https://brasilescola.uol.com.br/educacao-fisica/atividade-fisica-durante-inverno.htm">Atividade Física Durante o Inverno</a></div>
+                                                        <div class="artigos-relacionados__descricao">Os benefícios da atividade física durante o inverno não são diferentes dos benefícios nas outras estações do ano.</div>
+                                                    </div>
+
+                                                                                                        <div class="artigos-relacionados__separador"></div>
+                                                                                                    </div>
+                                                                                            <div class="omnia-row artigos-relacionados__bloco">
+                                                    <div class="omnia-col-4 artigos-relacionados__bloco-imagem">
+                                                                                                                    <a class="artigos-relacionas__bloco-imagem--link-color" href="https://brasilescola.uol.com.br/saude/atividades-fisicas-gripe.htm">
+                                                                <div class="artigos-relacionados__secao">Saúde e Bem-estar</div>
+                                                                <img class="lozad artigos-relacionados__imagem" data-src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/4694dbd6d430dff8f82621c14bdbe8c1.jpg" alt=" Exercícios intensos não são recomendados quando estamos gripados ou resfriados" title="Academia" src="https://brasilescola.uol.com.br/assets/images/loading.gif" onerror="this.src='https://brasilescola.uol.com.br/assets/images/no-image.jpg'"/>
+                                                            </a>
+                                                                                                            </div>
+
+                                                    <div class="omnia-col-8 artigos-relacionados__bloco-info">
+                                                        <div><a class="artigos-relacionados__titulo" href="https://brasilescola.uol.com.br/saude/atividades-fisicas-gripe.htm">Atividades físicas e a gripe</a></div>
+                                                        <div class="artigos-relacionados__descricao">Muitas dúvidas rondam a cabeça das pessoas quando o assunto é atividades físicas e a gripe. Clique aqui e descubra se essa combinação é saudável!</div>
+                                                    </div>
+
+                                                                                                        <div class="artigos-relacionados__separador"></div>
+                                                                                                    </div>
+                                                                                            <div class="omnia-row artigos-relacionados__bloco">
+                                                    <div class="omnia-col-4 artigos-relacionados__bloco-imagem">
+                                                                                                                    <a class="artigos-relacionas__bloco-imagem--link-color" href="https://brasilescola.uol.com.br/saude-na-escola/diabetescuidados-com-saude.htm">
+                                                                <div class="artigos-relacionados__secao">Saúde na escola</div>
+                                                                <img class="lozad artigos-relacionados__imagem" data-src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/f03a24337d571c628f1b8f191e808c98.jpg" alt="O diabetes pode ser controlado com uma alimentação saudável" title="Diabetes" src="https://brasilescola.uol.com.br/assets/images/loading.gif" onerror="this.src='https://brasilescola.uol.com.br/assets/images/no-image.jpg'"/>
+                                                            </a>
+                                                                                                            </div>
+
+                                                    <div class="omnia-col-8 artigos-relacionados__bloco-info">
+                                                        <div><a class="artigos-relacionados__titulo" href="https://brasilescola.uol.com.br/saude-na-escola/diabetescuidados-com-saude.htm">Diabetes — Cuidados com a saúde</a></div>
+                                                        <div class="artigos-relacionados__descricao">Veja quais são os cuidados com a saúde que o paciente com diabetes deve ter!</div>
+                                                    </div>
+
+                                                                                                        <div class="artigos-relacionados__separador"></div>
+                                                                                                    </div>
+                                                                                            <div class="omnia-row artigos-relacionados__bloco">
+                                                    <div class="omnia-col-4 artigos-relacionados__bloco-imagem">
+                                                                                                                    <a class="artigos-relacionas__bloco-imagem--link-color" href="https://brasilescola.uol.com.br/saude/fibromialgia.htm">
+                                                                <div class="artigos-relacionados__secao">Saúde e Bem-estar</div>
+                                                                <img class="lozad artigos-relacionados__imagem" data-src="https://s2.static.brasilescola.uol.com.br/be/2020/01/fibromialgia.jpg" alt="" title="" src="https://brasilescola.uol.com.br/assets/images/loading.gif" onerror="this.src='https://brasilescola.uol.com.br/assets/images/no-image.jpg'"/>
+                                                            </a>
+                                                                                                            </div>
+
+                                                    <div class="omnia-col-8 artigos-relacionados__bloco-info">
+                                                        <div><a class="artigos-relacionados__titulo" href="https://brasilescola.uol.com.br/saude/fibromialgia.htm">Fibromialgia</a></div>
+                                                        <div class="artigos-relacionados__descricao">Aprenda mais sobre a fibromialgia clicando aqui! Neste texto falaremos os principais sintomas dessa síndrome e como é feito seu diagnóstico e tratamento.</div>
+                                                    </div>
+
+                                                                                                        <div class="artigos-relacionados__separador"></div>
+                                                                                                    </div>
+                                                                                            <div class="omnia-row artigos-relacionados__bloco">
+                                                    <div class="omnia-col-4 artigos-relacionados__bloco-imagem">
+                                                                                                                    <a class="artigos-relacionas__bloco-imagem--link-color" href="https://brasilescola.uol.com.br/doencas/hipertensao.htm">
+                                                                <div class="artigos-relacionados__secao">Doenças e patologias</div>
+                                                                <img class="lozad artigos-relacionados__imagem" data-src="https://s5.static.brasilescola.uol.com.br/be/2021/02/pressao-alta.jpg" alt="" title="" src="https://brasilescola.uol.com.br/assets/images/loading.gif" onerror="this.src='https://brasilescola.uol.com.br/assets/images/no-image.jpg'"/>
+                                                            </a>
+                                                                                                            </div>
+
+                                                    <div class="omnia-col-8 artigos-relacionados__bloco-info">
+                                                        <div><a class="artigos-relacionados__titulo" href="https://brasilescola.uol.com.br/doencas/hipertensao.htm">Hipertensão (pressão alta)</a></div>
+                                                        <div class="artigos-relacionados__descricao">Clique e compreenda o que é hipertensão, seus sintomas, como é feito o diagnóstico e no que consiste o tratamento desse problema de saúde.</div>
+                                                    </div>
+
+                                                                                                        <div class="artigos-relacionados__separador"></div>
+                                                                                                    </div>
+                                                                                            <div class="omnia-row artigos-relacionados__bloco">
+                                                    <div class="omnia-col-4 artigos-relacionados__bloco-imagem">
+                                                                                                                    <a class="artigos-relacionas__bloco-imagem--link-color" href="https://brasilescola.uol.com.br/biologia/imunidade.htm">
+                                                                <div class="artigos-relacionados__secao">Biologia</div>
+                                                                <img class="lozad artigos-relacionados__imagem" data-src="https://s1.static.brasilescola.uol.com.br/be/2020/06/fagocitose.jpg" alt="" title="" src="https://brasilescola.uol.com.br/assets/images/loading.gif" onerror="this.src='https://brasilescola.uol.com.br/assets/images/no-image.jpg'"/>
+                                                            </a>
+                                                                                                            </div>
+
+                                                    <div class="omnia-col-8 artigos-relacionados__bloco-info">
+                                                        <div><a class="artigos-relacionados__titulo" href="https://brasilescola.uol.com.br/biologia/imunidade.htm">Imunidade</a></div>
+                                                        <div class="artigos-relacionados__descricao">A imunidade é fundamental para a saúde do nosso corpo. Clique aqui e aprenda o que é imunidade, quais são seus tipos e como podemos de melhorá-la.</div>
+                                                    </div>
+
+                                                                                                        <div class="artigos-relacionados__separador"></div>
+                                                                                                    </div>
+                                                                                            <div class="omnia-row artigos-relacionados__bloco">
+                                                    <div class="omnia-col-4 artigos-relacionados__bloco-imagem">
+                                                                                                                    <a class="artigos-relacionas__bloco-imagem--link-color" href="https://brasilescola.uol.com.br/saude-na-escola/peso-ideal.htm">
+                                                                <div class="artigos-relacionados__secao">Saúde na escola</div>
+                                                                <img class="lozad artigos-relacionados__imagem" data-src="https://s2.static.brasilescola.uol.com.br/be/2020/11/mulher-na-balanca.jpg" alt="" title="" src="https://brasilescola.uol.com.br/assets/images/loading.gif" onerror="this.src='https://brasilescola.uol.com.br/assets/images/no-image.jpg'"/>
+                                                            </a>
+                                                                                                            </div>
+
+                                                    <div class="omnia-col-8 artigos-relacionados__bloco-info">
+                                                        <div><a class="artigos-relacionados__titulo" href="https://brasilescola.uol.com.br/saude-na-escola/peso-ideal.htm">Peso ideal e o IMC</a></div>
+                                                        <div class="artigos-relacionados__descricao">Você sabe qual a relação entre o peso ideal e o IMC? Clique aqui, aprenda a calcular seu IMC, e entenda as limitações desse índice.</div>
+                                                    </div>
+
+                                                                                                        <div class="artigos-relacionados__separador"></div>
+                                                                                                    </div>
+                                                                                            <div class="omnia-row artigos-relacionados__bloco">
+                                                    <div class="omnia-col-4 artigos-relacionados__bloco-imagem">
+                                                                                                                    <a class="artigos-relacionas__bloco-imagem--link-color" href="https://brasilescola.uol.com.br/saude/suplementacao-alimentar-atividades-fisicas.htm">
+                                                                <div class="artigos-relacionados__secao">Saúde e Bem-estar</div>
+                                                                <img class="lozad artigos-relacionados__imagem" data-src="https://s1.static.brasilescola.uol.com.br/be/conteudo/images/6b00e9bfa791196fc281a4d80d38f846.jpg" alt="Os suplementos alimentares são uma forma de complementar uma dieta deficiente" title="Suplemento alimentar" src="https://brasilescola.uol.com.br/assets/images/loading.gif" onerror="this.src='https://brasilescola.uol.com.br/assets/images/no-image.jpg'"/>
+                                                            </a>
+                                                                                                            </div>
+
+                                                    <div class="omnia-col-8 artigos-relacionados__bloco-info">
+                                                        <div><a class="artigos-relacionados__titulo" href="https://brasilescola.uol.com.br/saude/suplementacao-alimentar-atividades-fisicas.htm">Suplementação alimentar e atividades físicas</a></div>
+                                                        <div class="artigos-relacionados__descricao">Entenda mais sobre a suplementação alimentar e se ela é realmente necessária para praticantes de exercícios físicos.</div>
+                                                    </div>
+
+                                                                                                    </div>
+                                                                                    </div>
+                                    </div>
+                                
+                                <div id="bloco-native-rodape" class="bloco-native-rodape"></div>
+                            </div>
+                            <span class="clear"></span>
+                        </div>
+                        
+                        <span class="clear"></span>
+                        
+                    </div>
+                    <div class="grid-2 pub-artigo">
+                        <div class="destaque__video">
+        <a href="https://brasilescola.uol.com.br/videos/sociologia-contemporanea.htm" target="_blank" class="destaque__video-link js-modal-btn" data-video-id="eFr8EhbnWkc" autoplay="true">
+            <h2 class="destaque__video-title destaque__video-title--green">Sociologia contemporânea</h2>
+            
+                            <img class="destaque__video-img" src="https://s4.static.brasilescola.uol.com.br/be/2020/12/sociologia-contemporanea.jpg" onerror="this.src='https://brasilescola.uol.com.br/assets/images/no-image.jpg'" class="image-expand" alt="" title=""/>
+                        
+            <div class="destaque__video-description">
+                Veja, nesta aula, os assuntos mais pertinentes da sociologia contemporânea bem como os principais autores do tempo recente.
+            </div>
+        </a>
+    </div>
+        <div class="destaque__video">
+        <a href="https://brasilescola.uol.com.br/videos/gregorio-de-matos.htm" target="_blank" class="destaque__video-link js-modal-btn" data-video-id="gtw0Rb8YHJk" autoplay="true">
+            <h2 class="destaque__video-title destaque__video-title--green">Gregório de Matos</h2>
+            
+                            <img class="destaque__video-img" src="https://s5.static.brasilescola.uol.com.br/be/2021/05/gregorio-de-matos.jpg" onerror="this.src='https://brasilescola.uol.com.br/assets/images/no-image.jpg'" class="image-expand" alt="" title=""/>
+                        
+            <div class="destaque__video-description">
+                Nesta videoaula, você conhecerá um pouco mais sobre a vida e a obra de Gregório de Matos, tido como o maior poeta do barroco brasileiro. Confira nossa análise!
+            </div>
+        </a>
+    </div>
+    
+        
+    <div class="bloco-materia" style="margin-top: 19px;">
+        <h2 class="enem">Enem 2021</h2>
+
+        <div class="materia-conteudo">
+            <a href="https://vestibular.brasilescola.uol.com.br/enem/como-se-inscrever-no-enem-2021.htm">Inscrições abrem dia 30. Saiba como se inscrever!</a>
+        </div>
+
+        <div class="compartilhar-materia enem-borda">
+            <div class="conteudo-compartilhar enem">
+                COMPARTILHE 
+                <a href="#vestibular-borda" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvestibular.brasilescola.uol.com.br%2Fenem%2Fcomo-se-inscrever-no-enem-2021.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')" >
+                    <img class="bloco-materia-curtir-img" src="https://brasilescola.uol.com.br/assets/images/icons/bloco_materia.png"/>
+                </a> 
+                <a href="#vestibular-borda" onclick="window.open('https://twitter.com/intent/tweet?text=Inscrições abrem dia 30. Saiba como se inscrever!&url=https://vestibular.brasilescola.uol.com.br/enem/como-se-inscrever-no-enem-2021.htm', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+                    <img class="bloco-materia-twitar-img" src="https://brasilescola.uol.com.br/assets/images/icons/bloco_materia.png"/>
+                </a>
+                <a href="https://vestibular.brasilescola.uol.com.br/enem/como-se-inscrever-no-enem-2021.htm" class="f-direita">VER MATÉRIA
+                    <img class="bloco-materia-ver-img" src="https://brasilescola.uol.com.br/assets/images/icons/bloco_materia.png"/>
+                </a>
+            </div>
+        </div>
+    </div>
+        
+    <div class="bloco-materia" style="margin-top: 19px;">
+        <h2 class="vestibular">Vestibular</h2>
+
+        <div class="materia-conteudo">
+            <a href="https://vestibular.brasilescola.uol.com.br/noticias/negra-albina-e-com-baixa-visao-bolsista-e-aprovada-em-1-lugar-na-usp-pelas-cotas/350128.html">Negra, albina e com baixa visão, bolsista é aprovada em 1º lugar na USP pelas cotas</a>
+        </div>
+
+        <div class="compartilhar-materia vestibular-borda">
+            <div class="conteudo-compartilhar vestibular">
+                COMPARTILHE 
+                <a href="#vestibular-borda" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvestibular.brasilescola.uol.com.br%2Fnoticias%2Fnegra-albina-e-com-baixa-visao-bolsista-e-aprovada-em-1-lugar-na-usp-pelas-cotas%2F350128.html', 'popupWindow', 'width=600,height=600,scrollbars=yes')" >
+                    <img class="bloco-materia-curtir-img" src="https://brasilescola.uol.com.br/assets/images/icons/bloco_materia.png"/>
+                </a> 
+                <a href="#vestibular-borda" onclick="window.open('https://twitter.com/intent/tweet?text=Negra, albina e com baixa visão, bolsista é aprovada em 1º lugar na USP pelas cotas&url=https://vestibular.brasilescola.uol.com.br/noticias/negra-albina-e-com-baixa-visao-bolsista-e-aprovada-em-1-lugar-na-usp-pelas-cotas/350128.html', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+                    <img class="bloco-materia-twitar-img" src="https://brasilescola.uol.com.br/assets/images/icons/bloco_materia.png"/>
+                </a>
+                <a href="https://vestibular.brasilescola.uol.com.br/noticias/negra-albina-e-com-baixa-visao-bolsista-e-aprovada-em-1-lugar-na-usp-pelas-cotas/350128.html" class="f-direita">VER MATÉRIA
+                    <img class="bloco-materia-ver-img" src="https://brasilescola.uol.com.br/assets/images/icons/bloco_materia.png"/>
+                </a>
+            </div>
+        </div>
+    </div>
+        
+    <div class="bloco-materia" style="margin-top: 19px;">
+        <h2 class="monografias">Enem</h2>
+
+        <div class="materia-conteudo">
+            <a href="https://vestibular.brasilescola.uol.com.br/enem/mec-divulga-cronogramas-do-sisu-prouni-e-fies-2021-2/349934.html">MEC divulga datas do SiSU, ProUni e Fies do 2º semestre</a>
+        </div>
+
+        <div class="compartilhar-materia monografias-borda">
+            <div class="conteudo-compartilhar monografias">
+                COMPARTILHE 
+                <a href="#vestibular-borda" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvestibular.brasilescola.uol.com.br%2Fenem%2Fmec-divulga-cronogramas-do-sisu-prouni-e-fies-2021-2%2F349934.html', 'popupWindow', 'width=600,height=600,scrollbars=yes')" >
+                    <img class="bloco-materia-curtir-img" src="https://brasilescola.uol.com.br/assets/images/icons/bloco_materia.png"/>
+                </a> 
+                <a href="#vestibular-borda" onclick="window.open('https://twitter.com/intent/tweet?text=MEC divulga datas do SiSU, ProUni e Fies do 2º semestre&url=https://vestibular.brasilescola.uol.com.br/enem/mec-divulga-cronogramas-do-sisu-prouni-e-fies-2021-2/349934.html', 'popupWindow', 'width=600,height=600,scrollbars=yes')">
+                    <img class="bloco-materia-twitar-img" src="https://brasilescola.uol.com.br/assets/images/icons/bloco_materia.png"/>
+                </a>
+                <a href="https://vestibular.brasilescola.uol.com.br/enem/mec-divulga-cronogramas-do-sisu-prouni-e-fies-2021-2/349934.html" class="f-direita">VER MATÉRIA
+                    <img class="bloco-materia-ver-img" src="https://brasilescola.uol.com.br/assets/images/icons/bloco_materia.png"/>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+<div style="margin: 10px 0 10px 0;">
+    <div id="box_dir_social" style="margin: 10px 0 10px 0;">
+    <ul>
+        <li><a href="https://www.facebook.com/brasilescola" target="_blank" title="Facebook"></a></li>
+        <li><a href="https://www.instagram.com/brasilescolaoficial/" target="_blank" title="Instagram"></a></li>
+        <li><a href="https://twitter.com/brasilescola" target="_blank" title="Twitter"></a></li>
+        <li><a href="https://www.youtube.com/brasilescola" target="_blank" title="YouTube"></a></li>
+        <li><a href="https://brasilescola.uol.com.br/rss" title="rss"></a></li>
+    </ul>
+</div></div>
+
+<div id="area-flutuante-artigo-1" style="min-height: 600px;">
+    <div id="pub-flutuante-artigo-1" style="width: 300px; height: 600px; position: sticky;">
+                    <div class="publicidade-lateral">
+                <div style='width:300px; height:600px;'><!-- 300x600 - 1 - UOL AD --><div id="banner-300x600-area"><script>window.uolads && window.uolads.push({ id: "banner-300x600-area" });</script></div></div>
+            </div>
+            </div>
+</div>                    </div>
+                    <span class="clear"></span>
+                </div>
+            </div>
+
+            <span class="clear"></span>
+        </div>
+
+        <script>
+            var page = 'artigo';
+        </script>
+
+        <div class="rodape">
+    <div class="itens-rodape">
+        <div class="centro">
+            <div class="itens-rodape__links">
+                <ul>
+                    <li class="itens-rodape__item">
+                        <a class="itens-rodape__link" href="https://www.redeomnia.com/quem-somos" title="Sobre Nós" target="_blank">
+                            Quem somos
+                        </a>
+                    </li>
+
+                    <li class="itens-rodape__item">
+                        <a class="itens-rodape__link" href="https://www.redeomnia.com/portfolios/brasil-escola/" title="Anuncie" target="_blank">
+                            Anuncie no Brasil Escola
+                        </a>
+                    </li>
+
+                    <li class="itens-rodape__item">
+                        <a class="itens-rodape__link" href="https://www.redeomnia.com/quem-somos" title="Expediente" target="_blank">
+                            Expediente
+                        </a>
+                    </li>
+
+                    <li class="itens-rodape__item">
+                        <a class="itens-rodape__link" href="https://brasilescola.uol.com.br/politica-de-privacidade" title="Política de Privacidade" target="_blank">
+                            Política de Privacidade
+                        </a>
+                    </li>
+
+                    <li class="itens-rodape__item">
+                        <a class="itens-rodape__link" href="https://brasilescola.uol.com.br/termos-de-uso" title="Termos de Uso" target="_blank">
+                            Termos de Uso
+                        </a>
+                    </li>
+
+                    <li class="itens-rodape__item">
+                        <a class="itens-rodape__link" href="https://brasilescola.uol.com.br/contato" title="Fale Conosco" target="_blank">
+                            Fale Conosco
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="itens-rodape__social">
+                <ul>
+                    <li class="itens-rodape__social-item">SIGA O <b>BRASIL ESCOLA</b></li>
+
+                    <li class="itens-rodape__social-item">
+                        <a class="itens-rodape__social-facebook" href="https://www.facebook.com/brasilescola" target="_blank"></a>
+                    </li>
+
+                    <li class="itens-rodape__social-item">
+                        <a class="itens-rodape__social-twitter" href="https://twitter.com/brasilescola" target="_blank"></a>
+                    </li>
+
+                    <li class="itens-rodape__social-item">
+                        <a class="itens-rodape__social-youtube" href="https://www.youtube.com/brasilescola" target="_blank"></a>
+                    </li>
+
+                    <li class="itens-rodape__social-item">
+                        <a class="itens-rodape__social-rss" href="https://brasilescola.uol.com.br/rss" target="_blank"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-rodape">
+        <div class="centro">
+            <ul class="menu-rodape__itens">
+                <li class="menu-rodape__item menu-rodape__item--biologianet">
+                    <a class="menu-rodape__link menu-rodape__link--biologianet" href="https://www.biologianet.com" target="_blank" title="Biologia Net">
+                        Biologia Net
+                    </a>
+                </li>
+                
+                <li class="menu-rodape__item menu-rodape__item--escolakids">
+                    <a class="menu-rodape__link menu-rodape__link--escolakids" href="https://escolakids.uol.com.br" target="_blank" title="Escola Kids">
+                        Escola Kids
+                    </a>
+                </li>
+                
+                <li class="menu-rodape__item menu-rodape__item--exerciciosme">
+                    <a class="menu-rodape__link menu-rodape__link--exerciciosme" href="https://exercicios.mundoeducacao.uol.com.br" target="_blank" title="Exercícios Mundo Educação">
+                        Exercícios Mundo <br/> Educação
+                    </a>
+                </li>
+                
+                <li class="menu-rodape__item menu-rodape__item--historiadomundo">
+                    <a class="menu-rodape__link menu-rodape__link--historiadomundo" href="https://www.historiadomundo.com.br" target="_blank" title="História do Mundo">
+                        História do <br/> Mundo
+                    </a>
+                </li>
+                
+                <li class="menu-rodape__item menu-rodape__item--manualdaquimica">
+                    <a class="menu-rodape__link menu-rodape__link--manualdaquimica" href="https://www.manualdaquimica.com" target="_blank" title="Manual da Química">
+                        Manual da <br/> Química
+                    </a>
+                </li>
+                
+                <li class="menu-rodape__item menu-rodape__item--me">
+                    <a class="menu-rodape__link menu-rodape__link--me" href="https://mundoeducacao.uol.com.br" target="_blank" title="Mundo Educação">
+                        Mundo Educação
+                    </a>
+                </li>
+
+                <li class="menu-rodape__item menu-rodape__item--alunosonline">
+                    <a class="menu-rodape__link menu-rodape__link--alunosonline" href="https://www.preparaenem.com" target="_blank" title="PrePara ENEM">
+                        PrePara ENEM
+                    </a>
+                </li>
+                
+                <li class="menu-rodape__item menu-rodape__item--portugues">
+                    <a class="menu-rodape__link menu-rodape__link--portugues" href="https://www.portugues.com.br" target="_blank" title="Português">
+                        Português
+                    </a>
+                </li>
+                
+                <li class="menu-rodape__item menu-rodape__item--vestibularme">
+                    <a class="menu-rodape__link menu-rodape__link--vestibularme" href="//vestibular.mundoeducacao.uol.com.br" target="_blank" title="Vestibular Mundo Educação">
+                        Vestibular Mundo <br/> Educação
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="site-info">
+        <div class="centro">
+            <div class="site-info__logo">
+                                    <a href="https://brasilescola.uol.com.br">
+                        <img src="https://brasilescola.uol.com.br/assets/images/logo-covid19-rodape.png" alt="Brasil Escola" title="Brasil Escola">
+                    </a>
+                            </div>
+            
+            <div class="site-info__copyright">
+                Resolução mínima de 1024x768. Copyright © 2021 Rede Omnia - Todos os direitos reservados<br>
+                Proibida a reprodução total ou parcial sem prévia autorização (Inciso I do Artigo 29 Lei 9.610/98)
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="player_dynad_tv"></div>
+
+<!-- JS -->
+<script type="text/javascript">var URL = "https://brasilescola.uol.com.br/saude-na-escola/importancia-das-atividades-fisicas.htm";</script>
+<script defer src="https://brasilescola.uol.com.br/assets/js/lib.min.js"></script>
+
+
+
+<script defer src="https://brasilescola.uol.com.br/assets/js/all-1.1.3.min.js"></script>
+
+
+
+<div id="fb-root"></div>
+
+
+<div id="container-root"></div>
+
+<script defer type="text/javascript" src="https://brasilescola.uol.com.br/assets/js/bundle-2.1.2.min.js"></script>
+
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"6a5485b2c2","applicationID":"625018719","transactionName":"MwRWbRNYDEICUkFYXwpOdVoVUA1fTHBFQWwsFUBJPXoNXxdDWl1cARNHZSJWDEUGRFFecwsPQEsOVQ5UEXFWXl4QBEFdDn0DVQxC","queueTime":0,"applicationTime":133,"atts":"H0NVG1tCH0w=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+</html>
